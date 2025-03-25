@@ -15,14 +15,9 @@ O projeto foi desenvolvido para praticar habilidades de engenharia de dados, uti
 ### Pré-requisitos
 
 1. **AWS S3**: Dados de entrada estão armazenados no Amazon S3.
-2. **Google Colab ou Jupyter Notebook**: Para execução do código Python.
+2. **Google Colab**: Para execução do código Python.
 3. **Python**: O código foi escrito em Python, utilizando as bibliotecas:
    - `pandas` para manipulação de dados.
    - `matplotlib` para criação de gráficos.
    - `boto3` para interação com a AWS S3.
 
-### Passos para Executar
-
-1. **Clone este repositório**:
-   ```bash
-   git clone https://github.com/joaovnovais/analise-de-dados-amazon-stock-price.git
