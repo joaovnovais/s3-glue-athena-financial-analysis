@@ -12,7 +12,7 @@ O projeto foi desenvolvido para praticar habilidades de engenharia de dados, uti
 
 ## Como Rodar o Projeto
 
-### Pré-requisitos
+## Pré-requisitos
 
 1. **AWS S3**: Dados de entrada estão armazenados no Amazon S3.
 2. **Google Colab**: Para execução do código Python.
