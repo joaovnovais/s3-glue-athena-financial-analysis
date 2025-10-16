@@ -1,23 +1,86 @@
-# Análise de Dados do Preço das Ações da Amazon Utilizando AWS e Python
+# Amazon Stock Price Data Analysis Using AWS and Python
 
-Este projeto tem como objetivo analisar o preço das ações da Amazon, utilizando dados históricos e ferramentas da AWS, com o processamento dos dados feito em Python. O fluxo de trabalho do projeto inclui a coleta de dados, análise e visualização dos preços das ações da Amazon ao longo do tempo.
+# Overview
+This project aims to analyze Amazon’s (AMZN) historical stock price data, applying a complete data engineering and analysis workflow on AWS.
+The solution was built with a focus on cloud data engineering best practices, data processing, and exploratory analysis using Python.
 
-## Descrição do Projeto
 
-O projeto foi desenvolvido para praticar habilidades de engenharia de dados, utilizando AWS (como o S3 para armazenamento dos dados) e Python (com bibliotecas como Pandas e Matplotlib para análise e visualização). A análise inclui:
+# Project Architecture
 
-- Carregamento de dados de um arquivo CSV que contém informações sobre o preço das ações da Amazon.
-- Processamento dos dados para cálculo de médias móveis (7 e 30 dias) e variação percentual diária do preço de fechamento.
-- Geração de gráficos para visualização da evolução do preço das ações ao longo do tempo.
+The data pipeline was structured to simulate a real-world cloud-based workflow:
 
-## Como Rodar o Projeto
+1 - Data Ingestion:
+Historical Amazon stock price data was stored in an Amazon S3 bucket.
 
-## Pré-requisitos
+2 - Cataloging and ETL with AWS Glue:
+A table was created in the Glue Data Catalog, defining schemas and data types to facilitate queries.
 
-1. **AWS S3**: Dados de entrada estão armazenados no Amazon S3.
-2. **Google Colab**: Para execução do código Python.
-3. **Python**: O código foi escrito em Python, utilizando as bibliotecas:
-   - `pandas` para manipulação de dados.
-   - `matplotlib` para criação de gráficos.
-   - `boto3` para interação com a AWS S3.
+3 - SQL Queries with Amazon Athena:
+Athena was used to query and process the data directly from S3 using SQL.
 
+4 - Analysis and Visualization with Python:
+Pandas and Matplotlib (via Google Colab) were used to calculate metrics and visualize closing prices, moving averages, and daily variations.
+
+5 - Data Ready for Analytical Consumption:
+The processed data was prepared and validated for use in BI tools or further analytical processes.
+
+
+# Analysis Goals
+
+- Compute 7-day and 30-day moving averages to detect price trends.
+
+- Analyze daily percentage variation of closing prices.
+
+- Generate visualizations showing price evolution over time.
+
+- Prepare data for future analytical layers (BI, Machine Learning, etc.).
+
+
+# Tech Stack
+
+| Category         | Tool                            | Description                                     |
+| ---------------- | ------------------------------- | ----------------------------------------------- |
+|    Language      | **Python (Pandas, Matplotlib)** | Data processing and analysis                    |
+|    Cloud         | **Amazon Web Services (AWS)**   | Cloud infrastructure and data orchestration     |
+|    Storage       | **Amazon S3**                   | Central storage for raw and processed CSV files |
+|    ETL / Catalog | **AWS Glue**                    | Schema creation and data cataloging             |
+|    Query Engine  | **Amazon Athena**               | Serverless SQL querying from S3                 |
+|    Environment   | **Google Colab**                | Notebook environment for running Python code    |
+
+
+# How to Run the Project
+
+1 - Requirements
+
+- AWS Free Tier account
+
+- S3 bucket containing the dataset
+
+- AWS Glue database and catalog configured
+
+- Permission to run Athena queries
+
+2 - Steps
+
+- Upload the dataset to your S3 bucket.
+
+- Create a table in AWS Glue Data Catalog using the correct schema.
+
+- Use Amazon Athena to query, clean, and validate the dataset.
+
+- Export the results and open them in Google Colab.
+
+- Run the Python notebook to:
+
+- Compute 7-day and 30-day moving averages
+
+- Generate trend and variation charts
+
+
+# Results
+
+- Identified long-term upward trends using moving averages.
+
+- Visualized volatility through daily percentage variations.
+
+- Prepared and structured data ready for analytical consumption in BI or ML applications.
